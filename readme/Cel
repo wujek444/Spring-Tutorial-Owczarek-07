@@ -1,0 +1,8 @@
+Utworzenie własnej metody fabrykującej.
+
+Prywatny konstruktor!!! Przydaje się wtedy gdy chcemy tworzyć obiekty tylko za pomocą statycznych
+metod fabrykujących.
+
+1. Tworzymy klasę User z prywatnym konstruktorem oraz statyczną metodą fabrykującą, tworzącą obiekt, 
+	a następnie ustawiającą pola instancji klasy. Nadpisujemy także metodę toString().
+2. Tworzymy użytkownika jako beana.
