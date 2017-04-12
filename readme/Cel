@@ -1,8 +1,18 @@
-Utworzenie własnej metody fabrykującej.
+Stworzenie metody fabrykującej, pochodzącej z instancji jakiejś klasy.
 
-Prywatny konstruktor!!! Przydaje się wtedy gdy chcemy tworzyć obiekty tylko za pomocą statycznych
-metod fabrykujących.
+Logger z java.util.logging działa jak logger, który kiedyś stworzyliśmy i służy 
+do logowania użytkownika.
 
-1. Tworzymy klasę User z prywatnym konstruktorem oraz statyczną metodą fabrykującą, tworzącą obiekt, 
-	a następnie ustawiającą pola instancji klasy. Nadpisujemy także metodę toString().
-2. Tworzymy użytkownika jako beana.
+1. Tworzymy jeszcze raz klasę User z prywatnym polem "name" i metodą fabrykującą (niestatyczną)
+	Dodajemy także obiekt loggera, który będzie przechowywał informację o stworzeniu każdego
+	użytkownika.
+2. Tworzymy beana usersCreator, na podstawie klasy UsersCreator.
+3. Tym razem to OBIEKT usersCreator będzie nam tworzył użytkowników, przy użyciu metody createUser.
+	Aby wykorzystać to do tworzenia bean'ów, przy tworzeniu beana user, musimy najpierw podać 
+	bean, na którym będzie wywołana metoda fabrykująca (bean-fabryka). Robimy to za pomocą 
+	"factory-bean", gdzie przekazujemy referecję do poprzednio stworzonego beana usersCreator.
+	Następnie podajemy "factory-method", która ma być wywołana na bean'ie-fabryce w celu stworzenia
+	obiektu, któremu odpowiada bean. 
+	NIE PODAJEMY TUTAJ KLASY, NA PODSTAWIE JAKIEJ MA BYĆ STWORZONY BEAN -> TYP OBIEKTU 
+	POWIĄZANEGO Z BEAN'EM BĘDZIE TAKI JAK TYP ZWRACANY PRZEZ METODĘ FABRYKUJĄCĄ
+	OBIEKTU FABRYKI.

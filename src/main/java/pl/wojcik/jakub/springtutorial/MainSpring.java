@@ -1,6 +1,5 @@
 package pl.wojcik.jakub.springtutorial;
 
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

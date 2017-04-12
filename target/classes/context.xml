@@ -3,10 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="someUser" class="pl.wojcik.jakub.springtutorial.User"
-		factory-method="getInstance">
-		<constructor-arg name="name" value="Jakub" index="0" />
-		<constructor-arg name="age" value="22" index="1" />
+	<bean id="usersCreator" class="pl.wojcik.jakub.springtutorial.UsersCreator" />
+	<bean id="someUser" factory-bean="usersCreator" factory-method="createUser">
+		<constructor-arg name="userName" value="Kuba"/>
 	</bean>
-
 </beans>
